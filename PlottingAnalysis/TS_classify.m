@@ -127,7 +127,11 @@ end
 % CONVERT BOTH TO numClassesxN form before plotting confusion matrix
 realLabels = BF_ToBinaryClass(timeSeriesGroup');
 predictLabels = BF_ToBinaryClass(kfoldPredict(CVMdl));
+predictLabels(isnan(predictLabels(:,1)),:)=[]
+realLabels(isnan(realLabels(:,1)),:)=[]
+
 plotconfusion(realLabels,predictLabels);
+
 
 % Fix axis labels:
 ax = gca;

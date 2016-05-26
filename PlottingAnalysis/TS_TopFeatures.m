@@ -328,7 +328,7 @@ if any(ismember(whatPlots,'distributions'))
             end
 
             % Annotate rectangles under the distributions
-            BF_AnnotateRect(whatTestStat,TS_DataMat(:,op_ind),timeSeriesGroup,numClasses,colors,ax);
+%              BF_AnnotateRect(whatTestStat,TS_DataMat(:,op_ind),timeSeriesGroup,numClasses,colors,ax);
 
             xlabel(sprintf('[%u] %s (%s=%4.2f%s)',Operations(op_ind).ID,Operations(op_ind).Name,...
                                 cfnName,testStat(op_ind),cfnUnit),'interpreter','none')
