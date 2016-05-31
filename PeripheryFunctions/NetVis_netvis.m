@@ -245,6 +245,7 @@ for jman = 1:numRepeats
 
     % Run through the mechanics of the visualization method:
     for iter = 1:maxIter  % Could use a threshold on the gradient here
+        g = NetVis_Jtilda2d(x,y,numApprox);
         f = NetVis_Jtilda2d(x,y,numApprox); % Gets the repulsion forces using an approximation
         J = [(E*x-f);(E*y-g)]; % This is the full gradient (attraction - repulsion)
         % This is only to plot the residual (so can be removed for speed)

@@ -52,7 +52,7 @@ check_addTimeSeries = @(x) isnumeric(x) && (x==0 || x==1);
 addOptional(inputP,'addTimeSeries',default_addTimeSeries,check_addTimeSeries);
 
 % timeSeriesLength, length of time-series annotations to the left of the main plot
-default_timeSeriesLength = 100;
+default_timeSeriesLength = 4000;
 addOptional(inputP,'timeSeriesLength',default_timeSeriesLength,@isnumeric);
 
 % colorGroups, color groups of time series differently:
@@ -294,9 +294,9 @@ ax2.YTick = 1:numTS;
 ax2.YLim = [0.5,numTS+0.5];
 
 % Columns: operations:
-xlabel('Operations')
+xlabel('Features')
 ax2.XLim = [0.5,numOps+0.5];
-if numOps < 1000 % if too many operations, it's too much to list them all...
+if numOps < 100 % if too many operations, it's too much to list them all...
     ax2.XTick = 1:numOps;
     ax2.XTickLabel = {Operations.Name};
     ax2.XTickLabelRotation = 90;
