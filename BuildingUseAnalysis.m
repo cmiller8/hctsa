@@ -1,9 +1,14 @@
 %The steps in this file create the analysis for differentiating the
 %building use types
 
-%Label the points
-TS_subset('raw',TS_getIDs({'UnivDorm','UnivLab'},'raw'),TS_getIDs('usetype','raw','ops'),1,'HCTSA_univdorm_univlab.mat')
-TS_subset('raw',TS_getIDs({'UnivDorm','UnivLab'},'raw'),[],1,'HCTSA_univdorm_univlab.mat')
+%Get the subsets from the main files
+TS_subset('raw',TS_getIDs({'UnivDorm','UnivLab'},'raw'),TS_getIDs('usetype','raw','ops'),1,'HCTSA_BG_univdorm_univlab.mat')
+
+
+TS_subset('raw',TS_getIDs({'UnivDorm','UnivLab'},'raw'),[],1,'HCTSA_Benchmark_univdorm_univlab.mat')
+TS_subset('raw',TS_getIDs({'PrimClass','UnivClass'},'raw'),[],1,'HCTSA_Benchmark_univclass_primclass.mat')
+TS_subset('raw',TS_getIDs({'Office','UnivLab'},'raw'),[],1,'HCTSA_Benchmark_office_univlab.mat')
+
 
 %Then make the `HCTSA_dorm_prim.mat` into the `HCTSA.mat` file
 TS_LabelGroups({'UnivDorm','UnivLab'},'raw');
